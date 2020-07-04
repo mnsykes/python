@@ -34,13 +34,13 @@ while True:
 
       # If match found print results based on first and last name
       if firstName == line[0] and lastName == line[1]:
-        print(line[0].upper() + ' ' + line[1].upper() + ', ' + line[2])
+        print(line[0].title() + ' ' + line[1].title() + ', ' + line[2])
       
     else:
       # If match found print results based on last name only 
       lastName = name[0]
       if lastName in line[1]:
-        print(line[0].upper() + ' ' + line[1].upper() + ', ' + line[2])
+        print(line[0].title() + ' ' + line[1].title() + ', ' + line[2])
           
 
   
