@@ -1,5 +1,9 @@
 
 def dictLookup():
+  print('---------------------------------------------------')
+  print('ADDRESS AND PHONE NUMBER LOOKUP TOOL')
+  print('---------------------------------------------------')
+  choice = input('To begin using the tool, please enter a file to open: ').lower()
   try:
     lookup = {}
     f = open(choice, 'r')
@@ -9,20 +13,25 @@ def dictLookup():
     return lookup
 
   except FileNotFoundError:
-    print('Error: file did not open')
+    print('****************************')
+    print('  ERROR: FILE DID NOT OPEN ')
+    print('  EXIT CODE: 1              ')
+    print('****************************')
 if __name__== "_dictLookup_":
   dictLookup()
 
 
-choice = input('Enter a file to open: ').lower()
-print('\n')
 lookup = dictLookup()
 for key in lookup:
-  key = input('Enter a name: ').lower()
-  if key in lookup:
-    print(lookup[key])
-  
-  
+  while True:
+    key = input('\nEnter a name: ').lower().strip()
+    if key in lookup:
+      newLookup = lookup[key]
+      print('Street:' + ' ' + newLookup[0].title())
+      print('City:' + ' '   + newLookup[1].title())
+      print('State:' + ' '  + newLookup[2].upper())
+      print('Zip:' + ' '    + newLookup[3])
+      # print(lookup[key])
   
   
   
