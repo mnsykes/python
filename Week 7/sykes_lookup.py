@@ -1,8 +1,7 @@
+import sys
+
 
 def dictLookup():
-  print('---------------------------------------------------')
-  print('ADDRESS AND PHONE NUMBER LOOKUP TOOL')
-  print('---------------------------------------------------')
   choice = input('To begin using the tool, please enter a file to open: ').lower()
   try:
     lookup = {}
@@ -20,20 +19,32 @@ def dictLookup():
 if __name__== "_dictLookup_":
   dictLookup()
 
+def formatInfo():
+  lookup = dictLookup()
+  for key in lookup:
+    while True:
+      choice = input('\nEnter (1) to lookup a phone number or (2) for an address: ')
+      if choice == '1':
+        key = input('\nEnter a name: ').lower().strip()
+        if key in lookup:
+          newLookup = lookup[key]
+          print('Phone number:' + ' ' + newLookup[4])
+      elif choice == '2':
+        if key in lookup:
+          key = input('\nEnter a name: ').lower().strip()
+          newLookup = lookup[key]
+          print('Street:' + ' ' + newLookup[0].title())
+          print('City:' + ' '   + newLookup[1].title())
+          print('State:' + ' '  + newLookup[2].upper())
+          print('Zip:' + ' '    + newLookup[3])
+      else: 
+        if choice != '1' or '2':
+          print('error')
+      
+print('---------------------------------------------------')
+print('ADDRESS AND PHONE NUMBER LOOKUP TOOL')
+print('---------------------------------------------------')
+print(formatInfo())
 
-lookup = dictLookup()
-for key in lookup:
-  while True:
-    key = input('\nEnter a name: ').lower().strip()
-    if key in lookup:
-      newLookup = lookup[key]
-      print('Street:' + ' ' + newLookup[0].title())
-      print('City:' + ' '   + newLookup[1].title())
-      print('State:' + ' '  + newLookup[2].upper())
-      print('Zip:' + ' '    + newLookup[3])
-      # print(lookup[key])
-  
-  
-  
 
 
