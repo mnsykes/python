@@ -1,24 +1,10 @@
 import sys
 
-"""
-Function requests user to enter a file to be read and converts that file into a 
-dictionary.  Try/except used to catch to display error message if file fails 
-to load.
-"""
-def dictLookup():
-  chooseFile = input('To begin using the tool, please enter a file to open: ').lower()
-  try:
-    lookup = {}
-    f = open(chooseFile, 'r')
-    for line in f:
-      personalInfo = line.lower().strip().split(',')
-      lookup[personalInfo[0]] = personalInfo[1:]
-
-  except FileNotFoundError:
-    print('ERROR: FILE NOT FOUND')
-    sys.exit(1)
-
-  return lookup
+def main():
+  print('---------------------------------------------------')
+  print('     ADDRESS AND PHONE NUMBER LOOKUP TOOL          ')
+  print('---------------------------------------------------')
+  formatInfo()
 
 """
 Function with input for user to request phone num or address of a name that they will enter.
@@ -59,11 +45,31 @@ def formatInfo():
         if choice != '1' or '2':
           print('Error: Please choose a valid option.')
 
-def main():
-  print('---------------------------------------------------')
-  print('     ADDRESS AND PHONE NUMBER LOOKUP TOOL          ')
-  print('---------------------------------------------------')
-  formatInfo()
+"""
+Function requests user to enter a file to be read and converts that file into a 
+dictionary.  Try/except used to catch to display error message if file fails 
+to load.
+"""
+def dictLookup():
+  useLookup = input('To use the lookup tool enter (1): ').strip()
+  if useLookup == '1':
+    try:
+      lookup = {}
+      f = open('address.txt', 'r')
+      for line in f:
+        personalInfo = line.lower().strip().split(',')
+        lookup[personalInfo[0]] = personalInfo[1:]
+
+    except FileNotFoundError:
+      print('ERROR: FILE NOT FOUND')
+      sys.exit(1)
+
+    return lookup
+
+  else:
+    print('You have exited the program')
+    sys.exit()
+
 
 if __name__ == "__main__":
   main()
