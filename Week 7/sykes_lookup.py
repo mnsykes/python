@@ -1,7 +1,5 @@
 import sys
 
-  
-
 """
 Function requests user to enter a file to be read and converts that file into a 
 dictionary.  Try/except used to catch to display error message if file fails 
@@ -13,7 +11,7 @@ def dictLookup():
     lookup = {}
     f = open(chooseFile, 'r')
     for line in f:
-      personalInfo = line.lower().strip().split(', ')
+      personalInfo = line.lower().strip().split(',')
       lookup[personalInfo[0]] = personalInfo[1:]
 
   except FileNotFoundError:
@@ -61,12 +59,13 @@ def formatInfo():
         if choice != '1' or '2':
           print('Error: Please choose a valid option.')
 
-print('---------------------------------------------------')
-print('     ADDRESS AND PHONE NUMBER LOOKUP TOOL          ')
-print('---------------------------------------------------')
-formatInfo()
+def main():
+  print('---------------------------------------------------')
+  print('     ADDRESS AND PHONE NUMBER LOOKUP TOOL          ')
+  print('---------------------------------------------------')
+  formatInfo()
 
-# if __name__== "_main_":
-#   main()
+if __name__ == "__main__":
+  main()
 
 
