@@ -1,0 +1,29 @@
+The following programming exercise makes use of the things we coved in this week's material. This
+is a practice programming assignment and is not submitted for grading. However, you can ask
+questions on this exercise just as you would with a graded exercise. Please use this week's
+discussion board for questions (or send me email if the questions are specific to you and your
+application). Enjoy!
+Program: customer.py – Create a class to model customer information.
+Write a Python module called customer.py that defines a class called Customer. The class should:
+1. Have three instance variables to hold the customer name, address and phone number.
+2. Have a constructor (__init__ method) that accepts the name, address and phone number as
+parameters and assigns them to the appropriate class instance variables.
+3. Have separate methods to set the address and phone number, in case these change for the
+customer. Note that you do not need a method to set the name since it is assume that will
+not change.
+4. Have separate methods to get the customer name, address and phone numbers.
+5. Include a __str__ method that displays the customer information in the following form:
+Name: Josh Kelly
+Address: 7416 Monroe Ave., Media, PA, 19063
+Phone: 424-555-4053
+6. Once you’ve created your class, test it against the program test_customer.py to ensure it
+functions. An example of correct output follows
+Name: Josh Kelly
+Address: 7416 Monroe Ave., Media, PA, 19063
+Phone: 424-555-4053
+Enter a new phone number for Josh Kelly: 424-555-8221
+Josh's new number is 424-555-8221
+Josh's new information is Name: Josh Kelly
+Address: 7416 Monroe Ave., Media, PA, 19063
+Phone: 424-555-8221
+7. Write a test program of your own that verifies all the methods of the class work correctly.

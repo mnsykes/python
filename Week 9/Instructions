@@ -1,0 +1,66 @@
+Program: company.py
+This program exercises many of the things we covered in this week’s material
+including operator overloading and inheritance.
+Requirements
+For this assignment you have been provided a base class named Person contained
+in the file person.py and a test program named test_company.py. For the
+assignment you are to create a Python module named company.py that does the
+following:
+1. The module should import the Person class from person.py
+2. The module should define two classes, Employee and Customer. Each class
+should be derived from the Person class so it inherits a person’s attributes
+and methods.
+3. The Customer class should additionally:
+a. Have an instance variable named credit_score, along with accessor
+(“getter”) and mutator (“setter”) methods to read and set the credit
+score.
+b. Have a constructor with the following header that does the appropriate
+initialization.
+def __init__(self, name, address, phone, credit_score):
+c. Override the __str__() method so it returns a string containing the
+customer’s name, address, phone and credit score. For example, the
+output may look as follows:
+name: Drew Smith
+address: 285 Andover Lane, Pompano Beach, FL, 33060
+phone: 412-555-2121
+credit_score: 760
+4. The Employee class should additionally:
+a. Have instance variables named badge (representing a badge number)
+and salary, along with accessor (“getter”) and mutator (“setter”)
+methods to read and set their values.
+b. Have a constructor with the following header that does the appropriate
+initialization.
+def __init__(self, name, address, phone, badge, salary):
+c. Override the __str__() method so it returns a string containing the
+employee’s name, address, phone and badge number, but not their
+salary. For example, the output may look as follows:
+name: James Chen
+address: 87 Pierce Road, Windsor, CT, 06095
+phone: 256-555-3331
+badge: 907
+d. Have an __eq__ method that overrides the “==” operator. The criteria
+for equality should be the badge number. (Note that you do not need
+to override the __eq__ method for the Customer class.)
+To download person.py and test_company.py from within Blackboard, right-click
+on the respective file and select “Save link as…” Make sure to save the files to the
+same folder you plan to write your company.py script in so the test_company.py
+script will work and the person.py module will be found.
+Testing
+When you’ve developed your company.py module you should be able to run the
+test_company.py script and see output similar to the following. Note that the exact
+format of the output may vary, but the information should be the same.
+Customers:
+name: Drew Smith
+address: 285 Andover Lane, Pompano Beach, FL, 33060
+phone: 412-555-2121
+credit_score: 760
+Employees:
+name: James Chen
+address: 87 Pierce Road, Windsor, CT, 06095
+phone: 256-555-3331
+badge: 907
+name: Brady Parker
+address: 80 Franklin Dr., Waterbury, CT, 06705
+phone: 756-555-3828
+badge: 321
+I found the employee with badge 321

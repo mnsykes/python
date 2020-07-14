@@ -1,0 +1,30 @@
+The following programming exercise makes use of the things we coved in this week's material. This
+is a practice programming assignment and is not submitted for grading. However, you can ask
+questions on this exercise just as you would with a graded exercise. Please use this week's
+discussion board for questions (or send me email if the questions are specific to you and your
+application). Enjoy!
+Program: Greatest Common Divisor
+The greatest common divisor, GCD, of two positive integers, A and B, is the largest number that can
+be evenly divided into both of them. The following algorithm (known as Euclid’s algorithm) can be
+used to find the GCD of two positive integers.
+1. Compute the remainder of dividing the larger number by the smaller number.
+2. Replace the larger number with the smaller number and the smaller number with the
+remainder.
+3. Repeat this process until the smaller number is zero.
+When the smaller number is zero, the larger number will be the greatest common divisor of A and B.
+Write a program that lets the user enter two positive integers and compute the GCD. The program
+should:
+1. Prompt the user for the smaller number and the larger number using the Python input
+statement with appropriate conversions to integer types.
+2. Use a compound if statement to verify the numbers are positive. If not, print an appropriate
+error message. The program should then conclude.
+3. Verify the smaller number is <= larger number and print an error message if it is not.
+4. Calculate the GCD in a loop.
+5. Display the GCD using the Python print statement along appropriately descriptive text.
+6. As the final step, put all your code into an infinite while loop so the user can calculate the
+GCD of as many pairs of numbers as they would like. They will type Ctrl-c to terminate the
+program.
+Create and run this program as a Python script called gcd.py and test it with multiple input values.
+Hint: Remember that the input statement will automatically convert the user’s input to a string.
+Since your calculation will use integer values, you will need to convert the input to an integer type
+using the int function.
